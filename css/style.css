@@ -83,14 +83,13 @@ button {
     cursor: pointer;
 }
 
-.pass-test {
+.welcome-screen {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.pass-test__content {
     height: 100%;
 }
+
 .button {
     border-radius: 5px;
     font-weight: bold;
@@ -102,7 +101,7 @@ button {
     background: linear-gradient(180deg, #F492B2 0%, #F65D77 100%);
     box-shadow: 0px 2px 10px #F65D77;
 }
-.pass-test__button {
+.welcome-screen__button {
     max-width: 320px;
 }
 
@@ -128,19 +127,19 @@ button {
     height: 682px;
     max-height: 95%;
     z-index: 45;
-    overflow: auto;
+   
 }
-.quiz-head {
+.quiz-header {
     padding: 41px 0 34px 43px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #F65D77;
 }
-.quiz-head__logo {
+.quiz-header__logo {
     width: 87px;
     display: block;
 }
-.quiz-head__hint {
+.quiz-header__text {
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;
@@ -156,6 +155,7 @@ button {
 .form__wrap {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 .form__title {
     font-weight: bold;
@@ -164,19 +164,17 @@ button {
     color: #595354;
     margin-bottom: 30px;
 }
-.form__label-radio {
+.answers__label {
     margin-right: 42px;
     cursor: pointer;
     border-radius: 5px;
     max-width: 240px;
     box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.25);
 }
-.form__label-radio.active-radio {
+.form__radio:checked + figure{
     box-shadow: 0px 4px 17px #F65D77;
 }
-.form__label-radio:last-child {
-    margin-right: 0;
-}
+
 .form__radio {
     display: none;
 }
@@ -185,7 +183,7 @@ button {
     height: 247px;
     overflow: hidden;
 }
-.form__answer {
+.form__answer-text {
     font-weight: bold;
     font-size: 18px;
     line-height: 25px;
@@ -197,12 +195,12 @@ button {
     align-items: center;
     justify-content: center;
 }
-.form-button__indent {
+
+.buttons-wrap{
     margin-top: 50px;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
+    display: flex;    
 }
+
 .form-button__btn-next {
     max-width: 171px;
     display: block;
@@ -269,27 +267,30 @@ button {
 .form__column {
     max-width: 409px;
 }
-.form__group {
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    padding: 14px 10px
+.slide-list {
+    width: 409px;   
+    list-style-type: none;    
 }
-.form__group.active-checkbox {
+
+.form__list.active-checkbox {
     border: 1px solid #F492B2;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 .form__input {
     display: none;
 }
-.form__label-checkbox {
+.slide-list__label {    
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 14px 10px;
     line-height: 22px;
     color: #595354;
     display: flex;
     align-items: center;
     position: relative;
 }
-.form__label-checkbox::before {
+.slide-list__label::before {
     content: '';
     width: 30px;
     height: 30px;
@@ -298,21 +299,22 @@ button {
     border-radius: 5px;
     margin-right: 15px;
 }
-.form__input:checked + .form__label-checkbox::before {
+.form__input:checked + .slide-list__label::before {
     border: 1px solid #F492B2;
 }
-.form__input:checked + .form__label-checkbox::after {
+.form__input:checked + .slide-list__label::after {
     content: '';
     background: url(../img/checked.png) center no-repeat;
     width: 36px;
     height: 32px;
     position: absolute;
-    top: -3px;
-    left: 0;
+    top: 10px;
+    left: 10px;
 }
 .form__column + .form-button__indent {
     margin-top: 130px;
 }
+
 .form-button__btn-prev {
     width: 48px;
     height: 48px;
